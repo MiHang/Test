@@ -6,5 +6,13 @@
     
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="gray">#8a8a8a</color>
+    <color name="lightGray">#b7b7b7</color>
+    <color name="drakGray">#717171</color>
+    
+    <color name="listRed">#ff7936</color>
+    <color name="listOrange">#ffc657</color>
+    <color name="listYellow">#ffe670</color>
+
     <color name="dividerColor">#cfcfcf</color>
 </resources>

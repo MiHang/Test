@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/arrow_left_gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:textColor="#8a8a8a"
+            android:text="2017上半学期学院优秀学生名单"/>
+
+    </LinearLayout>
+
+    <!-- 通告
+     android:elevation="6dp" 设置控件海拔-->
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:elevation="6dp"
+       android:layout_margin="10dp"
+       android:padding="10dp"
+       android:lineSpacingExtra="5dp"
+       android:background="@drawable/shape_excellent_stu_notice"
+       android:text="2017上半学期学院优秀学生共计30人，院团委对获奖学生予以热烈祝贺。"
+       />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="优秀学生名单"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/excellent_student_name_list_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
