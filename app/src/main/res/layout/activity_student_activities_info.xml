@@ -14,12 +14,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            app:srcCompat="?attr/actionModeCloseDrawable"/>
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/back"/>
 
         <TextView
             android:id="@+id/title"

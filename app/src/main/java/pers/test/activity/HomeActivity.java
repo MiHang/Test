@@ -65,6 +65,7 @@ public class HomeActivity  extends AppCompatActivity {
     @BindView(R.id.home_ciap_list)
     protected MyListView ciapList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,9 +93,13 @@ public class HomeActivity  extends AppCompatActivity {
         myGridView.setAdapter(new MyGridViewAdapter(getApplicationContext(),data));
 
         /*************** 首页相关推荐 公告 列表******************/
+        final String[] notice={
+                "关于2017暑假有关事项通知"
+                ,"7栋寝室维修情况公示","2017年优秀辅导员评选结果公示","2017年工勤人员考试公示",
+        };
         ArrayList<String> noticeListArray = new ArrayList<String>();
-        for (int i = 0; i < 4; i ++) {
-            noticeListArray.add("关于2017暑假有关事项通知");
+        for (int i = 0; i < notice.length; i ++) {
+            noticeListArray.add(notice[i]);
         }
         noticeList.setAdapter(new HomeNoticeListAdapter(HomeActivity.this, noticeListArray));
         noticeList.setListViewHeightBasedOnChildren();
@@ -102,22 +107,32 @@ public class HomeActivity  extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(HomeActivity.this, NewDetailActivity.class);
+                intent.putExtra("title",notice[position]);
                 startActivity(intent);
             }
         });
 
         /*************** 首页相关推荐 新闻 列表******************/
+        final String[] news={
+                "学院召开中层干部会议部署假期及开学工作",
+                "热烈庆祝学院圆满完成2017年上半年学历农活动",
+                "热烈庆祝首届国际教育联盟农业嘉年华活动展开",
+                "牧医系首届裕康原奖学金颁奖仪式",
+        };
         ArrayList<String> newsListArray = new ArrayList<String>();
-        for (int i = 0; i < 4; i ++) {
-            newsListArray.add("学院召开中层干部会议部署假期及开学工作");
+        for (int i = 0; i <news.length; i ++) {
+            newsListArray.add(news[i]);
         }
         newsList.setAdapter(new HomeNewsListAdapter(HomeActivity.this, newsListArray));
         newsList.setListViewHeightBasedOnChildren();
         newsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Intent intent = new Intent(HomeActivity.this, NewDetailActivity.class);
+                intent.putExtra("title",news[position]);
                 startActivity(intent);
+
             }
         });
 

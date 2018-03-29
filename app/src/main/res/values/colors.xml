@@ -13,6 +13,6 @@
     <color name="listRed">#ff7936</color>
     <color name="listOrange">#ffc657</color>
     <color name="listYellow">#ffe670</color>
-
+    <color name="bgColor_divier">#d7d7db</color>
     <color name="dividerColor">#cfcfcf</color>
 </resources>

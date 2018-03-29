@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import pers.test.R;
 import pers.test.adapter.ExcellentStudentNameListRecyclerViewAdapter;
 import pers.test.model.ExcellentStudentNameList;
@@ -46,5 +47,10 @@ public class ExcellentStudentsNameListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(new ExcellentStudentNameListRecyclerViewAdapter(arrayList));
 
+    }
+
+    @OnClick(R.id.excellent_stu_back)
+    public void onClickBack() {
+        onBackPressed();
     }
 }
