@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/biaoti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="学院召开2017年党建暨思想政治工作会"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="组织人数处" />
+
+        <ImageView
+            android:id="@+id/read"
+            android:layout_width="50dp"
+            android:layout_height="16dp"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:id="@+id/readnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200" />
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="2017.03.22" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/leirong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="        6月15日，学院召开2017年党建暨思想政治工作会。当书记郑明鹏，院长刘智慧，党委书记罗光虎，副院长李强、龙旭以及学院副科级以上干部参加会议" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/title"
+            />
+
+        <TextView
+            android:id="@+id/leirong1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="此次会议的召开，为我院全面贯测落实省十一次党代会、市十三次党代会和全国高校思想政治工作会议精神明确了目标。"/>
+    </LinearLayout>
+
+</LinearLayout>
