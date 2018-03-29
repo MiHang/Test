@@ -21,11 +21,9 @@ public class MyGridViewAdapter extends BaseAdapter {
     private Context context;
     private List<HomeIcon> lists;//数据源
 
-
     public MyGridViewAdapter(Context context, List<HomeIcon> lists) {
         this.context = context;
         this.lists = lists;
-
 
     }
 
@@ -59,7 +57,7 @@ public class MyGridViewAdapter extends BaseAdapter {
 
         if(convertView == null){
             holder = new ViewHolder();
-            convertView = View.inflate(context, R.layout.icon, null);
+            convertView = View.inflate(context, R.layout.home_icon, null);
             holder.emoji_text = (TextView)convertView.findViewById(R.id.IconName);
             holder.emoji = (ImageView)convertView.findViewById(R.id.Icon);
             convertView.setTag(holder);

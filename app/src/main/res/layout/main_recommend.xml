@@ -37,7 +37,7 @@
     <!-- 公告 -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="vertical"
         android:gravity="center"
@@ -47,26 +47,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="3dp"
+                android:layout_marginLeft="15dp"
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:text="公告"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
@@ -75,15 +77,42 @@
             <!-- 下箭头 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home_notice_more"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/icon_double_arrow_down"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_notice_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home_more"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <pers.test.view.MyListView
+                    android:id="@+id/home_notice_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+                </pers.test.view.MyListView>
+
+                <TextView
+                    android:id="@+id/home_notice_list_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="right"
+                    android:text="更多>>"/>
 
             </LinearLayout>
 
@@ -92,7 +121,7 @@
         <!-- 图标 -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="60dp"
@@ -109,7 +138,7 @@
     <!-- 新闻 -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="vertical"
         android:gravity="center"
@@ -119,26 +148,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="3dp"
+                android:layout_marginLeft="15dp"
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:text="新闻"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
@@ -147,15 +178,42 @@
             <!-- 下箭头 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home_news_more"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/icon_double_arrow_down"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_news_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home_more"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <pers.test.view.MyListView
+                    android:id="@+id/home_news_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+                </pers.test.view.MyListView>
+
+                <TextView
+                    android:id="@+id/home_news_list_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="right"
+                    android:text="更多>>"/>
 
             </LinearLayout>
 
@@ -164,7 +222,7 @@
         <!-- 图标 -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="60dp"
@@ -181,7 +239,7 @@
     <!-- 优秀学生 -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="vertical"
         android:gravity="center"
@@ -191,26 +249,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="3dp"
+                android:layout_marginLeft="15dp"
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:text="优秀学生"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
@@ -219,15 +279,42 @@
             <!-- 下箭头 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home_exstu_more"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/icon_double_arrow_down"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_exstu_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home_more"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <pers.test.view.MyListView
+                    android:id="@+id/home_exstu_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+                </pers.test.view.MyListView>
+
+                <TextView
+                    android:id="@+id/home_exstu_list_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="right"
+                    android:text="更多>>"/>
 
             </LinearLayout>
 
@@ -236,7 +323,7 @@
         <!-- 图标 -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="60dp"
@@ -253,7 +340,7 @@
     <!-- 学生活动 -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="vertical"
         android:gravity="center"
@@ -263,26 +350,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="3dp"
+                android:layout_marginLeft="15dp"
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:text="学生活动"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
@@ -291,15 +380,42 @@
             <!-- 下箭头 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home_stuac_more"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/icon_double_arrow_down"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_stuac_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home_more"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <pers.test.view.MyListView
+                    android:id="@+id/home_stuac_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+                </pers.test.view.MyListView>
+
+                <TextView
+                    android:id="@+id/home_stuac_list_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="right"
+                    android:text="更多>>"/>
 
             </LinearLayout>
 
@@ -308,7 +424,7 @@
         <!-- 图标 -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="60dp"
@@ -325,7 +441,7 @@
     <!-- 文明公寓 -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:orientation="vertical"
         android:gravity="center"
@@ -335,26 +451,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="3dp"
+                android:layout_marginLeft="15dp"
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:text="文明公寓"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:textSize="18dp"
                 android:textColor="#ffffff"
@@ -363,15 +481,42 @@
             <!-- 下箭头 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/home_ciap_more"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/icon_double_arrow_down"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_ciap_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_home_more"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <pers.test.view.MyListView
+                    android:id="@+id/home_ciap_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+                </pers.test.view.MyListView>
+
+                <TextView
+                    android:id="@+id/home_ciap_list_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="right"
+                    android:text="更多>>"/>
 
             </LinearLayout>
 
@@ -380,7 +525,7 @@
         <!-- 图标 -->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="60dp"
