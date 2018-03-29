@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import pers.test.R;
+
 public class StudentActivitiesInfoActivity extends AppCompatActivity {
 
     TextView activities_information;
