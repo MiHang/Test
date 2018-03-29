@@ -42,9 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         drup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gotoindex = new Intent(LoginActivity.this,StudentActivitiesInfoActivity.class);
-                gotoindex.putExtra("account",account.getText());
-                gotoindex.putExtra("passowrd",passowrd.getText());
+                Intent gotoindex = new Intent(LoginActivity.this, HomeActivity.class);
+                gotoindex.putExtra("account",account.getText().toString());
+                gotoindex.putExtra("password",passowrd.getText().toString());
                 startActivity(gotoindex);
                 finish();
             }
