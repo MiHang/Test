@@ -36,31 +36,40 @@ public class HomeActivity  extends AppCompatActivity {
     MyGridView myGridView;
     List<HomeIcon> data=new ArrayList<>();
 
-
     @BindView(R.id.home_notice_root)
     protected LinearLayout noticeRoot;
     @BindView(R.id.home_notice_list)
     protected MyListView noticeList;
+    @BindView(R.id.home_notice_more)
+    protected ImageView noticeMore;
 
     @BindView(R.id.home_news_root)
     protected LinearLayout newsRoot;
     @BindView(R.id.home_news_list)
     protected MyListView newsList;
+    @BindView(R.id.home_news_more)
+    protected ImageView newsMore;
 
     @BindView(R.id.home_exstu_root)
     protected LinearLayout exstuRoot;
     @BindView(R.id.home_exstu_list)
     protected MyListView exstuList;
+    @BindView(R.id.home_exstu_more)
+    protected ImageView exstuMore;
 
     @BindView(R.id.home_stuac_root)
     protected LinearLayout stuacRoot;
     @BindView(R.id.home_stuac_list)
     protected MyListView stuacList;
+    @BindView(R.id.home_stuac_more)
+    protected ImageView stuacMore;
 
     @BindView(R.id.home_ciap_root)
     protected LinearLayout ciapRoot;
     @BindView(R.id.home_ciap_list)
     protected MyListView ciapList;
+    @BindView(R.id.home_ciap_more)
+    protected ImageView ciapMore;
 
 
     @Override
@@ -245,8 +254,10 @@ public class HomeActivity  extends AppCompatActivity {
 
         if (ciapRoot.getVisibility() == View.GONE) {
             ciapRoot.setVisibility(View.VISIBLE);
+            ciapMore.setImageDrawable(getResources().getDrawable(R.drawable.home_fold_icon));
         } else {
             ciapRoot.setVisibility(View.GONE);
+            ciapMore.setImageDrawable(getResources().getDrawable(R.drawable.home_unfold_icon));
         }
     }
 
@@ -259,8 +270,10 @@ public class HomeActivity  extends AppCompatActivity {
 
         if (stuacRoot.getVisibility() == View.GONE) {
             stuacRoot.setVisibility(View.VISIBLE);
+            stuacMore.setImageDrawable(getResources().getDrawable(R.drawable.home_fold_icon));
         } else {
             stuacRoot.setVisibility(View.GONE);
+            stuacMore.setImageDrawable(getResources().getDrawable(R.drawable.home_unfold_icon));
         }
     }
 
@@ -273,8 +286,10 @@ public class HomeActivity  extends AppCompatActivity {
 
         if (exstuRoot.getVisibility() == View.GONE) {
             exstuRoot.setVisibility(View.VISIBLE);
+            exstuMore.setImageDrawable(getResources().getDrawable(R.drawable.home_fold_icon));
         } else {
             exstuRoot.setVisibility(View.GONE);
+            exstuMore.setImageDrawable(getResources().getDrawable(R.drawable.home_unfold_icon));
         }
     }
 
@@ -286,8 +301,10 @@ public class HomeActivity  extends AppCompatActivity {
 
         if (newsRoot.getVisibility() == View.GONE) {
             newsRoot.setVisibility(View.VISIBLE);
+            newsMore.setImageDrawable(getResources().getDrawable(R.drawable.home_fold_icon));
         } else {
             newsRoot.setVisibility(View.GONE);
+            newsMore.setImageDrawable(getResources().getDrawable(R.drawable.home_unfold_icon));
         }
     }
 
@@ -299,8 +316,10 @@ public class HomeActivity  extends AppCompatActivity {
 
         if (noticeRoot.getVisibility() == View.GONE) {
             noticeRoot.setVisibility(View.VISIBLE);
+            noticeMore.setImageDrawable(getResources().getDrawable(R.drawable.home_fold_icon));
         } else {
             noticeRoot.setVisibility(View.GONE);
+            noticeMore.setImageDrawable(getResources().getDrawable(R.drawable.home_unfold_icon));
         }
 
     }

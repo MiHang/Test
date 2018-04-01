@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -35,121 +35,122 @@
     </LinearLayout>
 
     <!-- 公告 -->
-    <FrameLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/shape_home_notice">
+        app:cardBackgroundColor="#00ffffff">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1">
+            android:layout_height="145dp"
+            android:background="@drawable/notice_card_bg"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="3dp"
                 android:layout_marginLeft="15dp"
-                android:background="#ffffff"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="公告"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="NOTICE"/>
-
-            <!-- 下箭头 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/home_notice_more"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_double_arrow_down"/>
-
-            </LinearLayout>
+                android:layout_marginTop="10dp"
+                android:background="#ffffff" />
 
             <LinearLayout
-                android:id="@+id/home_notice_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_home_more"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
-                <pers.test.view.MyListView
-                    android:id="@+id/home_notice_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none">
-                </pers.test.view.MyListView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/home_notice_list_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="公告"
+                        android:textColor="#ffffff"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="NOTICE"
+                        android:textColor="#ffffff"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <!-- 图标 -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:padding="10dp"
-                    android:gravity="right"
-                    android:text="更多>>"/>
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_notice_icon" />
 
             </LinearLayout>
+
+            <!-- 展开图标 -->
+            <ImageView
+                android:id="@+id/home_notice_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_unfold_icon" />
 
         </LinearLayout>
 
-        <!-- 图标 -->
-        <RelativeLayout
+        <!-- 信息列表 -->
+        <LinearLayout
+            android:id="@+id/home_notice_root"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/shape_home_more"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
+            <pers.test.view.MyListView
+                android:id="@+id/home_notice_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none"></pers.test.view.MyListView>
+
+            <TextView
+                android:id="@+id/home_notice_list_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
                 android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_earth"/>
+                android:text="更多>>" />
+        </LinearLayout>
 
-        </RelativeLayout>
-
-    </FrameLayout>
+    </android.support.v7.widget.CardView>
 
     <!-- 新闻 -->
-    <FrameLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/shape_home_news">
+        app:cardBackgroundColor="#00ffffff"
+        android:layout_margin="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1">
+            android:background="@drawable/news_card_bg">
 
             <TextView
                 android:layout_width="60dp"
@@ -158,99 +159,105 @@
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="新闻"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="NEWS"/>
-
-            <!-- 下箭头 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/home_news_more"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_double_arrow_down"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/home_news_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_home_more"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
-                <pers.test.view.MyListView
-                    android:id="@+id/home_news_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none">
-                </pers.test.view.MyListView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/home_news_list_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="18dp"
+                        android:textColor="#ffffff"
+                        android:text="新闻"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="18dp"
+                        android:textColor="#ffffff"
+                        android:text="NEWS"/>
+
+                </LinearLayout>
+
+                <!-- 图标 -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:padding="10dp"
-                    android:gravity="right"
-                    android:text="更多>>"/>
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_news_icon"/>
 
             </LinearLayout>
+
+            <!-- 展开图标 -->
+            <ImageView
+                android:id="@+id/home_news_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_unfold_icon"/>
 
         </LinearLayout>
 
-        <!-- 图标 -->
-        <RelativeLayout
+        <!-- 信息列表 -->
+        <LinearLayout
+            android:id="@+id/home_news_root"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/shape_home_more"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
+            <pers.test.view.MyListView
+                android:id="@+id/home_news_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+            </pers.test.view.MyListView>
+
+            <TextView
+                android:id="@+id/home_news_list_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_earth"/>
+                android:gravity="right"
+                android:text="更多>>"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-    </FrameLayout>
+    </android.support.v7.widget.CardView>
 
     <!-- 优秀学生 -->
-    <FrameLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/shape_home_students">
+        app:cardBackgroundColor="#00ffffff"
+        android:layout_margin="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1">
+            android:background="@drawable/exc_stu_card_bg">
 
             <TextView
                 android:layout_width="60dp"
@@ -259,99 +266,105 @@
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="优秀学生"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="Excellent Students"/>
-
-            <!-- 下箭头 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/home_exstu_more"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_double_arrow_down"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/home_exstu_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_home_more"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
-                <pers.test.view.MyListView
-                    android:id="@+id/home_exstu_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none">
-                </pers.test.view.MyListView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/home_exstu_list_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="18dp"
+                        android:textColor="#ffffff"
+                        android:text="优秀学生"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="18dp"
+                        android:textColor="#ffffff"
+                        android:text="Excellent Students"/>
+
+                </LinearLayout>
+
+                <!-- 图标 -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:padding="10dp"
-                    android:gravity="right"
-                    android:text="更多>>"/>
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_exc_stu_icon"/>
 
             </LinearLayout>
+
+            <!-- 展开图标 -->
+            <ImageView
+                android:id="@+id/home_exstu_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_unfold_icon"/>
 
         </LinearLayout>
 
-        <!-- 图标 -->
-        <RelativeLayout
+        <!-- 信息列表 -->
+        <LinearLayout
+            android:id="@+id/home_exstu_root"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/shape_home_more"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
+            <pers.test.view.MyListView
+                android:id="@+id/home_exstu_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+            </pers.test.view.MyListView>
+
+            <TextView
+                android:id="@+id/home_exstu_list_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_earth"/>
+                android:gravity="right"
+                android:text="更多>>"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-    </FrameLayout>
+    </android.support.v7.widget.CardView>
 
     <!-- 学生活动 -->
-    <FrameLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/shape_home_stu_activity">
+        app:cardBackgroundColor="#00ffffff"
+        android:layout_margin="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1">
+            android:background="@drawable/stu_activity_card_bg">
 
             <TextView
                 android:layout_width="60dp"
@@ -360,99 +373,105 @@
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="学生活动"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="Students Activity"/>
-
-            <!-- 下箭头 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/home_stuac_more"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_double_arrow_down"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/home_stuac_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_home_more"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
-                <pers.test.view.MyListView
-                    android:id="@+id/home_stuac_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none">
-                </pers.test.view.MyListView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/home_stuac_list_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="学生活动"
+                        android:textColor="#ffffff"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="Students Activity"
+                        android:textColor="#ffffff"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <!-- 图标 -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:padding="10dp"
-                    android:gravity="right"
-                    android:text="更多>>"/>
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_stu_activity_icon"/>
 
             </LinearLayout>
+
+            <!-- 展开图标 -->
+            <ImageView
+                android:id="@+id/home_stuac_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_unfold_icon"/>
 
         </LinearLayout>
 
-        <!-- 图标 -->
-        <RelativeLayout
+        <!-- 信息列表 -->
+        <LinearLayout
+            android:id="@+id/home_stuac_root"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/shape_home_more"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
+            <pers.test.view.MyListView
+                android:id="@+id/home_stuac_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+            </pers.test.view.MyListView>
+
+            <TextView
+                android:id="@+id/home_stuac_list_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_earth"/>
+                android:gravity="right"
+                android:text="更多>>"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-    </FrameLayout>
+    </android.support.v7.widget.CardView>
 
     <!-- 文明公寓 -->
-    <FrameLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/shape_home_stu_activity">
+        app:cardBackgroundColor="#00ffffff"
+        android:layout_margin="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1">
+            android:background="@drawable/civilized_apartment_card_bg">
 
             <TextView
                 android:layout_width="60dp"
@@ -461,82 +480,91 @@
                 android:background="#ffffff"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="文明公寓"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:textSize="18dp"
-                android:textColor="#ffffff"
-                android:text="Civilized Apartmenty"/>
-
-            <!-- 下箭头 -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/home_ciap_more"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/icon_double_arrow_down"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/home_ciap_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_home_more"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal">
 
-                <pers.test.view.MyListView
-                    android:id="@+id/home_ciap_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scrollbars="none">
-                </pers.test.view.MyListView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/home_ciap_list_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="文明公寓"
+                        android:textColor="#ffffff"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="Civilized Apartmenty"
+                        android:textColor="#ffffff"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <!-- 图标 -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:padding="10dp"
-                    android:gravity="right"
-                    android:text="更多>>"/>
+                    android:scaleType="centerInside"
+                    android:src="@drawable/home_civilized_apartemnt_icon"/>
 
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/home_ciap_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_unfold_icon"/>
 
         </LinearLayout>
 
-        <!-- 图标 -->
-        <RelativeLayout
+
+        <!-- 信息列表 -->
+        <LinearLayout
+            android:id="@+id/home_ciap_root"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/shape_home_more"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
+            <pers.test.view.MyListView
+                android:id="@+id/home_ciap_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+            </pers.test.view.MyListView>
+
+            <TextView
+                android:id="@+id/home_ciap_list_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_earth"/>
+                android:gravity="right"
+                android:text="更多>>"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-    </FrameLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>
