@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import pers.test.R;
 import pers.test.adapter.ExcellentStudentRecyclerViewAdapter;
 import pers.test.model.ExcellentStudentRecyclerViewModel;
@@ -45,5 +46,10 @@ public class ExcellentStudentsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager); // 设置布局管理器
         recyclerView.setAdapter(new ExcellentStudentRecyclerViewAdapter(arrayList)); // 设置适配器
         recyclerView.setItemAnimator(new DefaultItemAnimator()); // 设置 item 动画
+    }
+
+    @OnClick(R.id.exc_stu_back_image_view)
+    public void onClickBack() {
+        onBackPressed();
     }
 }

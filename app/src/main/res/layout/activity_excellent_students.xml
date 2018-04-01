@@ -13,6 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/exc_stu_back_image_view"
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:paddingLeft="10dp"
