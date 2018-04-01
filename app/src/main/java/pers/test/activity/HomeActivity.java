@@ -35,10 +35,7 @@ public class HomeActivity  extends AppCompatActivity {
     @BindView(R.id.MyGridView)
     MyGridView myGridView;
     List<HomeIcon> data=new ArrayList<>();
-    String[] name={"素质学分","宿舍","心理健康","文明公寓"
-            ,"评奖评优","学生活动","上课考勤","请假考勤"
-            ,"晚归考勤"
-    };
+
 
     @BindView(R.id.home_notice_root)
     protected LinearLayout noticeRoot;
@@ -72,30 +69,47 @@ public class HomeActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-//        Intent intent = getIntent();
-//        String account = intent.getStringExtra("account");
-//        String password = intent.getStringExtra("password");
+        Intent intent = getIntent();
+        String account = intent.getStringExtra("account");
+        String password = intent.getStringExtra("password");
 
-//        Toast.makeText(HomeActivity.this, "account = " + account + "; password = " + password,
-//                Toast.LENGTH_SHORT).show();
-//        Log.e("tag", "account = " + account + "; password = " + password);
+        Toast.makeText(HomeActivity.this, "account = " + account + "; password = " + password,
+                Toast.LENGTH_SHORT).show();
+        Log.e("tag", "account = " + account + "; password = " + password);
 
         /*************** 首页GridView ******************/
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
+        int[] icon={
+                R.drawable.suzhixuefen,
+                R.drawable.sushe,
+                R.drawable.xinlijiankang,
+                R.drawable.wenminggongyu,
+                R.drawable.pingjinagpingyou,
+                R.drawable.xueshenghuodong,
+                R.drawable.shangkekaoqin,
+                R.drawable.qingjiakaoqin,
+                R.drawable.wanguikaoqin
+        };
+        String[] name={"素质学分","宿舍","心理健康","文明公寓"
+                ,"评奖评优","学生活动","上课考勤","请假考勤"
+                ,"晚归考勤"
+        };
         for(int i=0;i<9;i++){
-            HomeIcon icon=new HomeIcon();
-            icon.setIcon(R.mipmap.ic_launcher);
-            icon.setIconName(name[i]);
-            data.add(icon);
+            HomeIcon HomeIcon=new HomeIcon();
+            HomeIcon.setIcon(icon[i]);
+            HomeIcon.setIconName(name[i]);
+            data.add(HomeIcon);
         }
         myGridView.setAdapter(new MyGridViewAdapter(getApplicationContext(),data));
 
         /*************** 首页相关推荐 公告 列表******************/
         final String[] notice={
                 "关于2017暑假有关事项通知"
-                ,"7栋寝室维修情况公示","2017年优秀辅导员评选结果公示","2017年工勤人员考试公示",
+                ,"7栋寝室维修情况公示",
+                "2017年优秀辅导员评选结果公示",
+                "2017年工勤人员考试公示",
         };
         ArrayList<String> noticeListArray = new ArrayList<String>();
         for (int i = 0; i < notice.length; i ++) {
