@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -203,7 +201,7 @@ public class HomeActivity  extends AppCompatActivity {
      */
     @OnClick(R.id.home_stuac_list_more)
     public void onClickStuacListMore() {
-        Intent intent = new Intent(HomeActivity.this, StudionActivitiesListActivity.class);
+        Intent intent = new Intent(HomeActivity.this, StudentsActivitiesListActivity.class);
         startActivity(intent);
     }
 
