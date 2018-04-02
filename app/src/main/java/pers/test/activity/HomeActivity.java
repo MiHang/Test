@@ -10,6 +10,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +31,7 @@ import pers.test.adapter.HomeNewsListAdapter;
 import pers.test.adapter.HomeNoticeListAdapter;
 import pers.test.adapter.MyGridViewAdapter;
 import pers.test.model.HomeIcon;
+import pers.test.model.NoticeInfo;
 import pers.test.view.MyGridView;
 import pers.test.view.MyListView;
 
@@ -69,6 +79,7 @@ public class HomeActivity  extends AppCompatActivity {
     @BindView(R.id.home_ciap_more)
     protected ImageView ciapMore;
 
+    private ArrayList<NoticeInfo> noticeInfos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +93,18 @@ public class HomeActivity  extends AppCompatActivity {
 
         Toast.makeText(HomeActivity.this, "account = " + account + "; password = " + password,
                 Toast.LENGTH_SHORT).show();
-        Log.e("tag", "account = " + account + "; password = " + password);
+
+        // 解析json文件
+        try {
+
+            JSONObject jsonObject = new JSONObject(readJSONTextFromAssets());
+            Gson gson = new Gson();
+            Type type = new TypeToken<ArrayList<NoticeInfo>>(){}.getType();
+            noticeInfos = (ArrayList<NoticeInfo>) gson.fromJson(jsonObject.getString("rows"), type);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         /*************** 首页GridView ******************/
         if(getSupportActionBar()!=null){
@@ -112,23 +134,17 @@ public class HomeActivity  extends AppCompatActivity {
         myGridView.setAdapter(new MyGridViewAdapter(getApplicationContext(),data));
 
         /*************** 首页相关推荐 公告 列表******************/
-        final String[] notice={
-                "关于2017暑假有关事项通知"
-                ,"7栋寝室维修情况公示",
-                "2017年优秀辅导员评选结果公示",
-                "2017年工勤人员考试公示",
-        };
         ArrayList<String> noticeListArray = new ArrayList<String>();
-        for (int i = 0; i < notice.length; i ++) {
-            noticeListArray.add(notice[i]);
+        for (int i = 0; i < noticeInfos.size() && i < 4; i ++) {
+            noticeListArray.add(noticeInfos.get(i).getTitle());
         }
         noticeList.setAdapter(new HomeNoticeListAdapter(HomeActivity.this, noticeListArray));
         noticeList.setListViewHeightBasedOnChildren();
         noticeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(HomeActivity.this, NewDetailActivity.class);
-                intent.putExtra("title",notice[position]);
+                Intent intent = new Intent(HomeActivity.this, NoticeDetailActivity.class);
+                intent.putExtra("noticeInfo",noticeInfos.get(position).toString());
                 startActivity(intent);
             }
         });
@@ -196,6 +212,30 @@ public class HomeActivity  extends AppCompatActivity {
         ciapList.setListViewHeightBasedOnChildren();
     }
 
+    // 读取assets中的json文件
+    private String readJSONTextFromAssets() throws Exception {
+
+        try {
+            InputStream is = getAssets().open("json.txt");//此处为要加载的json文件名称
+
+            InputStreamReader reader = new InputStreamReader(is,"GB2312");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            StringBuffer buffer = new StringBuffer("");
+            String str;
+            while ((str = bufferedReader.readLine()) != null) {
+                buffer.append(str);
+                buffer.append("\n");
+            }
+            return buffer.toString();//把读取的数据返回
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            Log.d("readFromAssets",e.toString());
+        }
+        return null;
+
+    }
+
     /**
      * 点击更多学生活动，跳转页面
      */
@@ -204,7 +244,6 @@ public class HomeActivity  extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this, StudentsActivitiesListActivity.class);
         startActivity(intent);
     }
-
 
     /**
      * 点击更多文明寝室，跳转页面
@@ -239,7 +278,10 @@ public class HomeActivity  extends AppCompatActivity {
      */
     @OnClick(R.id.home_notice_list_more)
     public void onClickNoticeListMore() {
-        Intent intent = new Intent(HomeActivity.this, NewsActivity.class);
+        Intent intent = new Intent(HomeActivity.this, NoticeListActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("noticeInfo", noticeInfos);
+        intent.putExtra("bundle", bundle);
         startActivity(intent);
     }
 
