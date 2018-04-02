@@ -56,7 +56,8 @@
         android:layout_weight="1"
         android:textSize="18sp"
         android:background="@drawable/loginbutton"
-        android:text="登录"/>
+        android:textColor="@color/white"
+        android:text="登  录"/>
 
     <TextView
         android:id="@+id/textView"

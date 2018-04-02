@@ -34,11 +34,13 @@ public class LoginActivity extends AppCompatActivity {
         drup = findViewById(R.id.drup);
 
         //控制登录用户名图标大小
-        Drawable drawable1 = getResources().getDrawable(R.mipmap.ic_launcher);
+        Drawable acount = getResources().getDrawable(R.drawable.acount);
+        Drawable  password = getResources().getDrawable(R.drawable.password);
 
-        drawable1.setBounds(0, 0, 100, 100);//第一0是距左边距离，第二0是距上边距离，40分别是长宽
-        passowrd.setCompoundDrawables(drawable1, null, null, null);//只放左边
-        account.setCompoundDrawables(drawable1, null, null, null);//只放左边
+        acount.setBounds(0, 0, 70, 70);//第一0是距左边距离，第二0是距上边距离，40分别是长宽
+        password.setBounds(0, 0, 70, 70);
+        account.setCompoundDrawables(acount, null, null, null);//只放左边
+        passowrd.setCompoundDrawables(password, null, null, null);//只放左边
         drup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
