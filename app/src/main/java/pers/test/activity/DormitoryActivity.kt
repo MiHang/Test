@@ -60,6 +60,7 @@ class DormitoryActivity : AppCompatActivity() {
         items.add("宿舍走访")
         items.add("卫生登记")
         items.add("维修登记")
+        items.add("卫生公示")
 
         // 交错式网格布局，只显示一行
         var staggerd: StaggeredGridLayoutManager =
