@@ -16,6 +16,7 @@ import butterknife.ButterKnife
 import pers.test.R
 import pers.test.adapter.DormitoryNavRecyclerAdapter
 import pers.test.adapter.DormitoryViewPagerAdapter
+import pers.test.callback.DormitoryClickItemListener
 import pers.test.fragment.*
 
 class DormitoryActivity : AppCompatActivity() {
@@ -69,15 +70,14 @@ class DormitoryActivity : AppCompatActivity() {
         var dormitoryNavRecyclerAdapter = DormitoryNavRecyclerAdapter(items)
 
         // 导航栏点击监听
-        dormitoryNavRecyclerAdapter.addOnClickItemListener(object: DormitoryNavRecyclerAdapter.OnClickItemListener{
-            override fun setOnClickItemListener(position: Int) {
-                if (position < fragments.size - 1) {
-                    // 切换页面
-                    viewPager.setCurrentItem(position)
-                }
+        dormitoryNavRecyclerAdapter.setOnClickItemListener { position ->
+            if (position < fragments.size - 1) {
+                // 切换页面
+                viewPager.setCurrentItem(position)
             }
-        })
-        recyclerView.adapter = DormitoryNavRecyclerAdapter(items)
+        }
+
+        recyclerView.adapter = dormitoryNavRecyclerAdapter
 
         // 添加fragment页面数据
         fragments.add(FragmentDormitoryAll())
