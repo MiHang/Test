@@ -17,7 +17,7 @@ public class FragmentDormitoryHealthPublicity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_dormitory_all, null);
+        View view = inflater.inflate(R.layout.fragment_dormitory_health_publicitty, null);
 
         return view;
     }
