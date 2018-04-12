@@ -34,8 +34,6 @@ class DormitoryActivity : AppCompatActivity() {
 
     @BindView(R.id.dormitory_recycler_view)
     lateinit var recyclerView: RecyclerView
-    @BindView(R.id.dormitory_h_scroll_bar)
-    lateinit var scrollBar: TextView
     @BindView(R.id.dormitory_view_pager)
     lateinit var viewPager: ViewPager
 
@@ -86,6 +84,7 @@ class DormitoryActivity : AppCompatActivity() {
         fragments.add(FragmentDormitoryHostelVisits())
         fragments.add(FragmentDormitoryHealthRegistration())
         fragments.add(FragmentDormitoryMaintenanceRegistration())
+        fragments.add(FragmentDormitoryHealthPublicity())
 
         // 设置ViewPager适配器
         viewPager.adapter = DormitoryViewPagerAdapter(supportFragmentManager, fragments)
