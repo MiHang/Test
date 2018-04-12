@@ -70,7 +70,7 @@ class DormitoryActivity : AppCompatActivity() {
 
         // 导航栏点击监听
         dormitoryNavRecyclerAdapter.setOnClickItemListener { position ->
-            if (position < fragments.size - 1) {
+            if (position <= fragments.size - 1) {
                 // 切换页面
                 viewPager.setCurrentItem(position)
             }
