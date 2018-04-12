@@ -5,4 +5,169 @@
     android:orientation="vertical">
     <include layout="@layout/dormitory_header"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="标题" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="宿舍" />
+
+
+        <Spinner
+            android:id="@+id/build"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/house"
+            android:layout_weight="4" />
+
+        <Spinner
+            android:id="@+id/room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/room"
+            android:layout_weight="5" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="辅导员" />
+
+        <Spinner
+            android:id="@+id/teacher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/teachers"
+            android:layout_weight="2" />
+
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="工作类型" />
+
+        <Spinner
+            android:id="@+id/work_kind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/work_kind"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="走访时间" />
+
+        <Spinner
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <Spinner
+            android:id="@+id/month"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <Spinner
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="走访内容" />
+
+        <EditText
+            android:id="@+id/visit_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null" />
+
+    </LinearLayout>
+
 </LinearLayout>

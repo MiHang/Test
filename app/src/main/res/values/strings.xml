@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Test</string>
+    <string-array name="house">
+    <item>1栋</item>
+    <item>2栋</item>
+    <item>3栋</item>
+    <item>4栋</item>
+</string-array>
+    <string-array name="room">
+        <item>1室</item>
+        <item>2室</item>
+        <item>3室</item>
+        <item>4室</item>
+    </string-array>
+    <string-array name="teachers">
+        <item>王XX</item>
+        <item>李X</item>
+        <item>林X</item>
+    </string-array>
+    <string-array name="work_kind">
+        <item>走访</item>
+    </string-array>
 </resources>

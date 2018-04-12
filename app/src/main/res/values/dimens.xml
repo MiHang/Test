@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="divide_line">0.3dp</dimen>
+    <dimen name="dormitory_item">40dp</dimen>
+    <dimen name="item_title_width">400dp</dimen>
+</resources>
