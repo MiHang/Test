@@ -132,6 +132,20 @@ public class HomeActivity  extends AppCompatActivity {
             data.add(HomeIcon);
         }
         myGridView.setAdapter(new MyGridViewAdapter(getApplicationContext(),data));
+        myGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0 : {
+
+                    };break;
+                    case 1: { // 宿舍
+                        Intent intent = new Intent(HomeActivity.this, DormitoryActivity.class);
+                        startActivity(intent);
+                    };break;
+                }
+            }
+        });
 
         /*************** 首页相关推荐 公告 列表******************/
         ArrayList<String> noticeListArray = new ArrayList<String>();
