@@ -25,17 +25,15 @@
         <activity android:name=".activity.AddVisitRecordActivity">
 
         </activity>
-        <activity android:name=".activity.visit">
 
-        </activity>
-        <activity android:name=".activity.DormitoryActivity"/>
-        <activity android:name=".activity.EnRecordActivity">
+        <activity android:name=".activity.DormitoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
