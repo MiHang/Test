@@ -52,4 +52,5 @@ public class NewDetailActivity extends AppCompatActivity {
     public void onClickBack() {
         onBackPressed();
     }
+
 }
