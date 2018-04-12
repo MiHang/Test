@@ -16,7 +16,7 @@ import pers.test.R;
  * Created by 惠普 on 2018-04-12.
  */
 
-public class e extends AppCompatActivity {
+public class AddVisitRecordActivity extends AppCompatActivity {
 
     @BindView(R.id.dormitory_back)
     ImageView dormitoryBack;
@@ -57,3 +57,4 @@ public class e extends AppCompatActivity {
     }
 
 }
+
