@@ -15,9 +15,80 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="标题" />
+            android:text="来访人" />
 
         <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="身份证" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="被访人" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="电话" />
+
+        <EditText
+            android:id="@+id/Grade"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
@@ -40,8 +111,6 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="宿舍" />
-
-
         <Spinner
             android:id="@+id/build"
             android:layout_width="match_parent"
@@ -61,7 +130,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
         android:background="@color/dividerColor" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dormitory_item"
@@ -72,59 +140,8 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="辅导员" />
+            android:text="来访时间" />
 
-        <Spinner
-            android:id="@+id/teacher"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:entries="@array/teachers"
-            android:layout_weight="2" />
-
-
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/divide_line"
-        android:background="@color/dividerColor" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dormitory_item"
-        android:background="@android:color/background_light">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text="工作类型" />
-
-        <Spinner
-            android:id="@+id/work_kind"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:entries="@array/work_kind"
-            android:layout_weight="2" />
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/divide_line"
-        android:background="@color/dividerColor" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dormitory_item"
-        android:background="@android:color/background_light">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text="走访时间" />
 
         <Spinner
             android:id="@+id/year"
@@ -145,6 +162,26 @@
             android:layout_weight="5" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dormitory_item"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="来访内容" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null" />
+
+
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
@@ -159,15 +196,16 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="走访内容" />
-
+            android:text="与被访者关系" />
         <EditText
-            android:id="@+id/visit_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:background="@null" />
 
     </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/dividerColor" />
 </LinearLayout>

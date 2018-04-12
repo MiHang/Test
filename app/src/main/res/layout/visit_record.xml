@@ -99,14 +99,14 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="工作类型" />
+            android:text="分数" />
 
-        <Spinner
-            android:id="@+id/work_kind"
+        <EditText
+            android:id="@+id/Grade"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/work_kind"
-            android:layout_weight="2" />
+            android:layout_weight="2"
+            android:background="@null" />
 
     </LinearLayout>
     <View
@@ -124,7 +124,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="走访时间" />
+            android:text="检查时间" />
 
         <Spinner
             android:id="@+id/year"
@@ -159,10 +159,10 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="走访内容" />
+            android:text="备注" />
 
         <EditText
-            android:id="@+id/visit_content"
+            android:id="@+id/remark"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
