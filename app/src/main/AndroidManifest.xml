@@ -22,9 +22,7 @@
         <activity android:name=".activity.NewDetailActivity" />
         <activity android:name=".activity.NoticeDetailActivity" />
         <activity android:name=".activity.NoticeListActivity" />
-        <activity android:name=".activity.AddVisitRecordActivity">
 
-        </activity>
 
         <activity android:name=".activity.DormitoryActivity">
             <intent-filter>
