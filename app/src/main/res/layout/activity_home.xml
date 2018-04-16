@@ -16,6 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
             android:gravity="center_vertical|center"
             android:text="学生工作管理" />
     </LinearLayout>
@@ -40,6 +42,7 @@
                 android:id="@+id/MyGridView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
                 android:verticalSpacing="10dp"
                 android:horizontalSpacing="10dp"
                 android:numColumns="4" />
