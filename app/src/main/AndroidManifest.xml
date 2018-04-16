@@ -27,11 +27,11 @@
         <activity android:name=".activity.NoticeDetailActivity" />
         <activity android:name=".activity.NoticeListActivity" />
         <activity android:name=".activity.DormitoryActivity">
-
         </activity>
         <activity android:name=".activity.VisitRecordActivity"></activity>
         <activity android:name=".activity.AddVisitRecordActivity"></activity>
         <activity android:name=".activity.HeathActivity"></activity>
+        <activity android:name=".activity.HealthPublicityDetailActivity"/>
     </application>
 
 </manifest>
