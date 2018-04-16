@@ -1,6 +1,7 @@
 package pers.test.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pers.test.R;
+import pers.test.activity.VisitRecordActivity;
 import pers.test.model.VisitInfo;
 
 /**
@@ -48,6 +50,14 @@ public class FragmentDormitoryHostelVisits extends Fragment {
         myVisit.setLayoutManager(layoutManager);
         MyAdapter myAdapter=new MyAdapter(getContext(),data);
         myVisit.setAdapter(myAdapter);
+        myAdapter.setItemListener(new MyAdapter.setItemListener() {
+            @Override
+            public void Item(View v, int position) {
+                Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), VisitRecordActivity.class));
+            }
+        });
+
         return view;
     }
 
@@ -55,9 +65,22 @@ public class FragmentDormitoryHostelVisits extends Fragment {
         myVisit = (RecyclerView) view.findViewById(R.id.myVisit);
     }
 
-    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements View.OnClickListener{
         Context context;
         List<VisitInfo> data;
+        setItemListener itemListener;
+
+        public setItemListener getItemListener() {
+            return itemListener;
+        }
+
+        public void setItemListener(setItemListener itemListener) {
+            this.itemListener = itemListener;
+        }
+
+        public interface setItemListener{
+            void Item(View v,int position);
+        }
 
         public MyAdapter(Context context, List<VisitInfo> data) {
             this.context = context;
@@ -69,6 +92,8 @@ public class FragmentDormitoryHostelVisits extends Fragment {
             View view = LayoutInflater.from(context).inflate(R.layout.visit_item, parent, false);//暂时不将布局文件放入root
 
             ViewHolder viewHolder = new ViewHolder(view);
+            view.setOnClickListener(this);
+
 
             return viewHolder;
         }
@@ -84,11 +109,24 @@ public class FragmentDormitoryHostelVisits extends Fragment {
             holder.record_content.setText(data.get(position).getContent());
             holder.Address.setText(data.get(position).getAddress());
             holder.Relative.setText(data.get(position).getRelative());
+            holder.itemView.setTag(position);
+
+
         }
 
         @Override
         public int getItemCount() {
             return data.size();
+        }
+
+        @Override
+        public void onClick(View view) {
+            if(itemListener!=null){
+                if (view.getTag()!=null){
+                    itemListener.Item(view, (int)view.getTag());
+                }
+
+            }
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
