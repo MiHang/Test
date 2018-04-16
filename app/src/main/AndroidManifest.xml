@@ -14,18 +14,20 @@
         <activity android:name=".activity.ExcellentStudentsNameListActivity" />
         <activity android:name=".activity.NewsActivity" />
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activity.StudentActivitiesInfoActivity" />
         <activity android:name=".activity.StudentsActivitiesListActivity" />
         <activity android:name=".activity.NewDetailActivity" />
         <activity android:name=".activity.NoticeDetailActivity" />
         <activity android:name=".activity.NoticeListActivity" />
         <activity android:name=".activity.DormitoryActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activity.VisitRecordActivity"></activity>
     </application>

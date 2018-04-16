@@ -17,8 +17,15 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/dormitory_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="48dp">
         </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/h_nav_divider"
+            android:layout_width="70dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="5dp"
+            android:background="#ffffff"/>
 
     </LinearLayout>
 
