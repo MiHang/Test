@@ -41,6 +41,7 @@ public class DormitoryNavRecyclerAdapter extends RecyclerView.Adapter<DormitoryN
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
+
         holder.navName.setText(items.get(position));
         holder.navName.setOnClickListener(new View.OnClickListener() {
             @Override
