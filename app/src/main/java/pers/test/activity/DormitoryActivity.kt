@@ -18,6 +18,7 @@ import pers.test.R
 import pers.test.adapter.DormitoryNavRecyclerAdapter
 import pers.test.adapter.DormitoryViewPagerAdapter
 import pers.test.fragment.*
+import pers.test.utils.DensityUtil
 
 class DormitoryActivity : AppCompatActivity() {
 
@@ -76,6 +77,10 @@ class DormitoryActivity : AppCompatActivity() {
             if (position <= fragments.size - 1) {
                 // 切换页面
                 viewPager.setCurrentItem(position)
+                if (position < 2) {
+                    var itemWidth = recyclerView.getLayoutManager().getChildAt(1).width
+                    recyclerView.scrollBy(itemWidth, 0)
+                }
             }
         }
 
@@ -101,31 +106,20 @@ class DormitoryActivity : AppCompatActivity() {
 
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
-                var itemWidth = recyclerView.getLayoutManager().getChildAt(1).width + 5
+                // 前3个导航项移动recyclerView Item
+                var itemWidth = recyclerView.getLayoutManager().getChildAt(1).width + 10
                 if (positionOffset != 0f && prevPositionOffset != 0f && position < 2) {
                     recyclerView.scrollBy(((positionOffset - prevPositionOffset) * itemWidth).toInt(), 0)
                 }
 
+                // 后3个导航项移动divide分割线
                 if (positionOffset != 0f && prevPositionOffset != 0f && position >= 2) {
-                    Log.e("tag", "已滚动到底部")
 
                     var params: LinearLayout.LayoutParams = divider.layoutParams as LinearLayout.LayoutParams
                     params.leftMargin = params.leftMargin + ((positionOffset - prevPositionOffset) * itemWidth).toInt()
-                    if (params.leftMargin != 0) {
-                        divider.layoutParams = params
-                    }
+                    divider.layoutParams = params
 
-                    Log.e("tag", "params.leftMargin = " + params.leftMargin)
-
-                } else if (!recyclerView.canScrollHorizontally(-1)) {
-                    Log.e("tag", "已滚动到顶部")
                 }
-
-//                if (position == 0) {
-//                    recyclerView.scrollBy(-recyclerView.scrollX, 0)
-//                    recyclerView.scrollToPosition(0)
-//                }
-                //Log.e("tag", "position = " + position)
 
                 prevPositionOffset = positionOffset
             }
@@ -133,7 +127,13 @@ class DormitoryActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
 
                 when(position) {
-                    0 -> title.setText("全部")
+                    0 -> {
+                        title.setText("全部")
+                        recyclerView.scrollToPosition(0)
+                        var params: LinearLayout.LayoutParams = divider.layoutParams as LinearLayout.LayoutParams
+                        params.leftMargin = DensityUtil.dpToPx(this@DormitoryActivity, 5f)
+                        divider.layoutParams = params
+                    }
                     1 -> title.setText("来访登记")
                     2 -> title.setText("宿舍走访")
                     3 -> title.setText("卫生登记")
