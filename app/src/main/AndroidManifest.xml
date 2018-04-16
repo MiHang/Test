@@ -31,7 +31,7 @@
         </activity>
         <activity android:name=".activity.VisitRecordActivity"></activity>
         <activity android:name=".activity.AddVisitRecordActivity"></activity>
-        <activity android:name=".activity.HealthPublicityDetailActivity"/>
+        <activity android:name=".activity.HeathActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package pers.test.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,8 @@ import java.util.Random;
 
 import pers.test.R;
 
+import pers.test.activity.HeathActivity;
+import pers.test.activity.VisitRecordActivity;
 import pers.test.model.Environment;
 
 /**
@@ -50,6 +54,13 @@ public class FragmentDormitoryHealthRegistration extends Fragment {
         myVisit.setLayoutManager(layoutManager);
         MyAdapter myAdapter=new MyAdapter(getContext(),data);
         myVisit.setAdapter(myAdapter);
+        myAdapter.setItemListener(new MyAdapter.setItemListener() {
+            @Override
+            public void Item(View v, int position) {
+                Toast.makeText(getContext(), ""+position, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), HeathActivity.class));
+            }
+        });
         return view;
     }
 
@@ -57,10 +68,32 @@ public class FragmentDormitoryHealthRegistration extends Fragment {
         myVisit = (RecyclerView) view.findViewById(R.id.myVisit);
     }
 
-    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements View.OnClickListener{
         Context context;
         List<Environment> data;
+        setItemListener itemListener;
 
+        public setItemListener getItemListener() {
+            return itemListener;
+        }
+
+        public void setItemListener(setItemListener itemListener) {
+            this.itemListener = itemListener;
+        }
+
+        @Override
+        public void onClick(View view) {
+            if(itemListener!=null){
+                if (view.getTag()!=null){
+                    itemListener.Item(view, (int)view.getTag());
+                }
+
+            }
+        }
+
+        public interface setItemListener{
+            void Item(View v,int position);
+        }
         public MyAdapter(Context context, List<Environment> data) {
             this.context = context;
             this.data = data;
@@ -71,6 +104,7 @@ public class FragmentDormitoryHealthRegistration extends Fragment {
             View view = LayoutInflater.from(context).inflate(R.layout.en_item, parent, false);//暂时不将布局文件放入root
 
            ViewHolder viewHolder = new ViewHolder(view);
+            view.setOnClickListener(this);
 
             return viewHolder;
         }
@@ -84,6 +118,8 @@ public class FragmentDormitoryHealthRegistration extends Fragment {
             holder.Address.setText(data.get(position).getAddress());
             holder.Grade.setText(data.get(position).getGrade());
             holder.Grade.setTextColor(Color.RED);
+            holder.itemView.setTag(position);
+
         }
 
 
