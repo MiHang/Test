@@ -4,11 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/dormitory_recycler_all"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:padding="15dp"
-        android:text="全部"/>
-
+        android:layout_height="match_parent"/>
 </LinearLayout>
