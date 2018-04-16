@@ -37,6 +37,12 @@ public class VisitRecordActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_dormitory_visiting_registration);
         initView();
         dormitory_title.setText("走访登记");
+        dormitory_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private void initView() {
