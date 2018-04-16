@@ -88,7 +88,7 @@ class DormitoryActivity : AppCompatActivity() {
 
         // 添加fragment页面数据
         fragments.add(FragmentDormitoryAll())
-//        fragments.add(FragmentDormitoryVisitingRegistration())
+        fragments.add(FragmentDormitoryVisitingRegistration())
         fragments.add(FragmentDormitoryHostelVisits())
         fragments.add(FragmentDormitoryHealthRegistration())
         fragments.add(FragmentDormitoryMaintenanceRegistration())

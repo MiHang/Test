@@ -17,7 +17,7 @@ import java.util.List;
 
 import pers.test.R;
 import pers.test.activity.VisitRecordActivity;
-import pers.test.model.VisitInfo;
+import pers.test.model.DorVisitInfo;
 
 /**
  * 宿舍 - 宿舍走访
@@ -26,7 +26,7 @@ import pers.test.model.VisitInfo;
 public class FragmentDormitoryHostelVisits extends Fragment {
 
     private RecyclerView myVisit;
-    List<VisitInfo> data=new ArrayList<>();
+    List<DorVisitInfo> data=new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -34,7 +34,7 @@ public class FragmentDormitoryHostelVisits extends Fragment {
 
         initView(view);
         for(int i=0;i<5;i++){
-            VisitInfo v=new VisitInfo();
+            DorVisitInfo v=new DorVisitInfo();
             v.setContent("走访");
             v.setAddress("成都");
             v.setName("王小二");
@@ -67,7 +67,7 @@ public class FragmentDormitoryHostelVisits extends Fragment {
 
     static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements View.OnClickListener{
         Context context;
-        List<VisitInfo> data;
+        List<DorVisitInfo> data;
         setItemListener itemListener;
 
         public setItemListener getItemListener() {
@@ -82,14 +82,14 @@ public class FragmentDormitoryHostelVisits extends Fragment {
             void Item(View v,int position);
         }
 
-        public MyAdapter(Context context, List<VisitInfo> data) {
+        public MyAdapter(Context context, List<DorVisitInfo> data) {
             this.context = context;
             this.data = data;
         }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(context).inflate(R.layout.visit_item, parent, false);//暂时不将布局文件放入root
+            View view = LayoutInflater.from(context).inflate(R.layout.dor_visit_item, parent, false);//暂时不将布局文件放入root
 
             ViewHolder viewHolder = new ViewHolder(view);
             view.setOnClickListener(this);
