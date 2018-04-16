@@ -1,4 +1,4 @@
-package pers.test.Comment;
+package pers.test.utils;
 
 import android.app.Activity;
 import android.view.Window;

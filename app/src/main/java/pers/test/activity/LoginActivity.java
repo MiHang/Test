@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import pers.test.Comment.CommonUtil;
 import pers.test.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -18,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     Button drup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        CommonUtil.setFullScreen(this);
+//        u.setFullScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initview();
