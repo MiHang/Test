@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import pers.test.Comment.CommonUtil;
+import pers.test.utils.CommonUtil;
 import pers.test.R;
 
 public class LoginActivity extends AppCompatActivity {

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -16,7 +17,6 @@ import butterknife.ButterKnife
 import pers.test.R
 import pers.test.adapter.DormitoryNavRecyclerAdapter
 import pers.test.adapter.DormitoryViewPagerAdapter
-import pers.test.callback.DormitoryClickItemListener
 import pers.test.fragment.*
 
 class DormitoryActivity : AppCompatActivity() {
@@ -34,6 +34,8 @@ class DormitoryActivity : AppCompatActivity() {
 
     @BindView(R.id.dormitory_recycler_view)
     lateinit var recyclerView: RecyclerView
+    @BindView(R.id.h_nav_divider)
+    lateinit var divider: TextView
     @BindView(R.id.dormitory_view_pager)
     lateinit var viewPager: ViewPager
 
@@ -48,12 +50,13 @@ class DormitoryActivity : AppCompatActivity() {
         // 更改标题栏
         headerRoot.setBackgroundColor(resources.getColor(R.color.colorPrimary))
         title.setText("全部")
+        title.setTextSize(18f)
         title.setTextColor(Color.WHITE)
         back.setOnClickListener { onBackPressed() }
         actionDivider.visibility = View.GONE
 
         // 添加导航栏列表数据
-        items.add("全部")
+        items.add("全    部")
         items.add("来访登记")
         items.add("宿舍走访")
         items.add("卫生登记")
@@ -80,7 +83,7 @@ class DormitoryActivity : AppCompatActivity() {
 
         // 添加fragment页面数据
         fragments.add(FragmentDormitoryAll())
-//        fragments.add(FragmentDormitoryVisitingRegistration())
+        fragments.add(FragmentDormitoryVisitingRegistration())
         fragments.add(FragmentDormitoryHostelVisits())
         fragments.add(FragmentDormitoryHealthRegistration())
         fragments.add(FragmentDormitoryMaintenanceRegistration())
@@ -88,6 +91,58 @@ class DormitoryActivity : AppCompatActivity() {
 
         // 设置ViewPager适配器
         viewPager.adapter = DormitoryViewPagerAdapter(supportFragmentManager, fragments)
+
+        // ViewPager页面改变监听
+        viewPager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener{
+
+            var prevPositionOffset: Float = 0f
+
+            override fun onPageScrollStateChanged(state: Int) { }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
+                var itemWidth = recyclerView.getLayoutManager().getChildAt(1).width + 5
+                if (positionOffset != 0f && prevPositionOffset != 0f && position < 2) {
+                    recyclerView.scrollBy(((positionOffset - prevPositionOffset) * itemWidth).toInt(), 0)
+                }
+
+                if (positionOffset != 0f && prevPositionOffset != 0f && position >= 2) {
+                    Log.e("tag", "已滚动到底部")
+
+                    var params: LinearLayout.LayoutParams = divider.layoutParams as LinearLayout.LayoutParams
+                    params.leftMargin = params.leftMargin + ((positionOffset - prevPositionOffset) * itemWidth).toInt()
+                    if (params.leftMargin != 0) {
+                        divider.layoutParams = params
+                    }
+
+                    Log.e("tag", "params.leftMargin = " + params.leftMargin)
+
+                } else if (!recyclerView.canScrollHorizontally(-1)) {
+                    Log.e("tag", "已滚动到顶部")
+                }
+
+//                if (position == 0) {
+//                    recyclerView.scrollBy(-recyclerView.scrollX, 0)
+//                    recyclerView.scrollToPosition(0)
+//                }
+                //Log.e("tag", "position = " + position)
+
+                prevPositionOffset = positionOffset
+            }
+
+            override fun onPageSelected(position: Int) {
+
+                when(position) {
+                    0 -> title.setText("全部")
+                    1 -> title.setText("来访登记")
+                    2 -> title.setText("宿舍走访")
+                    3 -> title.setText("卫生登记")
+                    4 -> title.setText("维修登记")
+                    5 -> title.setText("卫生公示")
+                }
+            }
+
+        })
     }
 
 }
